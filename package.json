@@ -1,0 +1,24 @@
+{
+  "name": "Sideboard Website",
+  "version": "1.0.0",
+  "description": "Website for the Sideboard Restaurant",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "massive": "^2.6.0"
+  }
+}
