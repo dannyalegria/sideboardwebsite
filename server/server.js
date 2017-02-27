@@ -54,6 +54,7 @@ var db = app.get('db');
 var mainController = require('./controllers/mainController');
 var userController = require('./controllers/userController');
 var orderController = require('./controllers/orderController');
+var menuController = require('./controllers/menuController');
 
 /*##############################
   Middleware:
@@ -104,6 +105,9 @@ app.get('/api/me', userController.me);
 
 // Order:
 app.get('/api/order', orderController.read);
+
+// Menu:
+app.get('/api/menu', menuController.getMenuItems);
 
 /*##############################
   Writeable:

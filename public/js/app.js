@@ -10,7 +10,8 @@ angular.module("app", ["ui.router"])
   })
   .state('menu',{
     url: '/menu',
-    templateUrl: './views/menu.html'
+    templateUrl: './views/menu.html',
+    controller: 'menuController'
   })
   .state('locations',{
     url: '/locations',
