@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: roboto;
+  font-family: 'Nunito', sans-serif;
   color: black !important;
 }
 
@@ -8,6 +8,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: auto !important;
 }
 
 main {
@@ -22,15 +23,18 @@ a {
 nav {
   text-align: center;
   z-index: 100;
+  position: -webkit-sticky !important;
+  top: 0 !important;
 }
 
 ul.dropdown-content{
   data-constraint-width: false;
   z-index: 1000000000000;
+  width: auto !important;
 }
 
 ul.dropdown-content li{
-  width: auto !important;
+  width: 100% !important;
 }
 
 .slider {
@@ -64,6 +68,12 @@ ul.dropdown-content li{
   background-image: url("../img/sb11.jpeg");
 }
 
+.shop-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .product-img {
   height: auto;
   width: 100%;
@@ -82,12 +92,47 @@ ul.dropdown-content li{
   min-width: 300px;
 }
 
+.card-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reveal-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-image {
+  height: 300px;
+}
+
+.card-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white !important;
+}
+
+.bottom-nav-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-nav {
+  width: 250px;
+}
+
+.bottom-nav h5 a {
+  color: white !important;
+}
+
 #bullshit {
   margin: 0 auto !important;
   font-size: 3em;
   -webkit-text-stroke: 1px black;
   color: white;
-
   text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
 

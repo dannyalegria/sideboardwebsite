@@ -4,71 +4,109 @@
     <li>
       <img src="../img/sb1.jpeg">
       <div class="caption center-align">
-        <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3 class="light grey-text text-lighten-3">Welcome to Sideboard</h3>
+        <h5 class="light grey-text text-lighten-3">Your neighborhood kitchen and coffee bar</h5>
       </div>
     </li>
     <li>
       <img src="../img/sb6.jpeg">
       <div class="caption left-align">
-        <h3>Left Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3 class="light grey-text text-lighten-3">Homemade</h3>
+        <h5 class="light grey-text text-lighten-3">Everything from pastries to condiments are made in house.</h5>
       </div>
     </li>
     <li>
       <img src="../img/sb4.jpeg">
       <div class="caption right-align">
-        <h3>Right Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3 class="light grey-text text-lighten-3">Healthy</h3>
+        <h5 class="light grey-text text-lighten-3">Everything is sourced locally and organic</h5>
       </div>
     </li>
     <li>
       <img src="../img/sb2.jpeg">
       <div class="caption center-align">
-        <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3 class="light grey-text text-lighten-3">...and the very best coffee</h3>
+        <h5 class="light grey-text text-lighten-3">Come join us!</h5>
       </div>
     </li>
   </ul>
-</div>
-
-<div class="divider"></div>
-
-<div class="container">
-
-  <div class="row">
-
-  <!-- Small About Section -->
-    <div class="col s12 m6 l9">
-      <h3>LOREM IPSUM</h3>
-        <p>klglkdfjghslkdjfghskldfjghs</p>
-        <p>klglkdfjghslkdjfghskldfjghs</p>
-        <p>klglkdfjghslkdjfghskldfjghs</p>
-        <p>klglkdfjghslkdjfghskldfjghs</p>
-    </div>
-
-    <!-- Small Contact Information -->
-
-    <div class="col s12 m6 l3">
-      <h4>sdfsdf</h4>
-        <p>sdfgdfgsdf</p>
-      <h4>sdfsdf</h4>
-        <p>sdfgdfgsdf</p>
-      <h4>sdfsdf</h4>
-        <p>sdfgdfgsdf</p>
-    </div>
-
-  </div>
-
-
-
+  <script>
+    $(document).ready(function(){
+    $('.slider').slider();
+    });
+  </script>
 </div>
 
 <div class="divider"></div>
 <br>
 
+  <!-- Small About Section -->
 <div class="container">
   <div class="row">
+    <div class="col s12">
+      <h4>Sideboard is a casual and cozy meeting place where people come to share our passion for quality handcrafted comfort food and beverage.</h4>
+        <p>Sideboard neighborhood kitchen and coffee bar is dedicated to creating handcrafted comfort food taking into account the season and availability of natural, local, organic, and sustainable ingredients whenever possible. All menu items and condiments are house made or sourced from purveyors who share our vision and passion in creating products which we believe to be the best available. Simply prepared, our rustic comfort food comes from the heart. Signature items will be available daily.</p>
+        <p>Our legendary coffee service begins with a selection of coffee beans which have been sourced from artisan's hand roasting in small batches. Our master craftsmen baristas measure and grind for individual French press or filter drip ensuring the freshest cup possible. We take special care in creating beautiful espresso drinks served European style in porcelain cups returning to sensuality and refinement. Teas and other specialty beverages are available daily.</p>
+        <p>Sideboard is a Green Certified restaurant.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<br>
+
+<!-- Parallax photo -->
+<div class="parallax-container">
+  <div class="parallax"><img src="./img/sb8.jpeg"></div>
+  <script>
+  $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
+</div>
+
+<div class="divider"></div>
+<br>
+
+<!-- Locations and hours -->
+
+<div class="container">
+  <div class="row">
+
+    <div class="col s12 m6 l6">
+      <h3>Danville</h3>
+      <hr>
+        <h5>Phone</h5>
+          <p>925.984.2713</p>
+        <h5>Hours</h5>
+          <p>Sunday - Monday: 8 am - 8 pm</p>
+          <p>Tuesday - Saturday: 8 am - 9 pm</p>
+        <h5>Address</h5>
+          <p>90 Railroad Avenue Danville, Ca 94526</p>
+    </div>
+
+    <div class="col s12 m6 l6">
+      <h3>Lafayette</h3>
+      <hr>
+        <h5>Phone</h5>
+          <p>925.310.4773</p>
+        <h5>Hours</h5>
+          <p>Sunday - Monday: 8 am - 8 pm</p>
+          <p>Tuesday - Saturday: 8 am - 9 pm</p>
+        <h5>Address</h5>
+          <p>3535 Plaza Way Lafayette, Ca 94549</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+<br>
+
+<!-- Bottom nav -->
+
+<div class="container bottom-nav-container">
+  <!-- <div class="row"> -->
     <div class="valign-wrapper col s12 m4 l4 bottom-nav menu">
       <h5 class="valign center-align white-text" id="bullshit"><a ui-sref="menu">Menu</a></h5>
     </div>
@@ -76,13 +114,7 @@
       <h5 class="valign center-align white-text" id="bullshit"><a ui-sref="locations">Locations</a></h5>
     </div>
     <div class="valign-wrapper col s12 m4 l4 bottom-nav shop">
-      <h5 class="valign center-align white-text" id="bullshit"><a ui-sref="shop">Shop</a></h5>      
+      <h5 class="valign center-align white-text" id="bullshit"><a ui-sref="shop">Shop</a></h5>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
-
-<script>
-  $(document).ready(function(){
-  $('.slider').slider();
-  });
-</script>

@@ -16,7 +16,7 @@ module.exports = {
 
   //CREATE
   createOneProduct: function(req, res){
-    db.create_product([
+    db.shop.create_product([
       req.body.name,
       req.body.description,
       req.body.price,
@@ -33,7 +33,7 @@ module.exports = {
 
   //READ
   getAllProducts: function(req, res){
-    db.read_products([], function(err, results){
+    db.shop.read_products([], function(err, results){
       if (err){
         console.error(err);
         res.send(err);
@@ -44,7 +44,7 @@ module.exports = {
   },
 
   getOneProduct: function(req, res){
-    db.read_product([req.params.id],
+    db.shop.read_product([req.params.id],
     function(err, results){
       if (err){
         console.error(err);
@@ -59,7 +59,7 @@ module.exports = {
 
   //UPDATE
   updateProduct: function(req, res){
-    db.update_product([
+    db.shop.update_product([
       req.params.id,
       req.body.name,
       req.body.description,
@@ -79,7 +79,7 @@ module.exports = {
   //DELETE
 
   deleteProduct: function(req, res){
-  db.delete_product([req.params.id],
+  db.shop.delete_product([req.params.id],
     function(err, results){
       if (err){
         console.error(err);

@@ -2,6 +2,8 @@
 <div class="divider"></div>
 <br>
 
+<!-- NOTE This will have to be two different views since the google api doesn't seem to like two keys on one page NOTE -->
+
 <div class="container">
   <div class="row">
 
@@ -11,13 +13,30 @@
       <p>925.984.2713</p>
       <p>info@itsonthesideboard.com</p>
       <p>Hours: </p>
-      <p>Sunday - Monday 8 am - 8 pm</p>
-      <p>Tuesday - Saturday 8 am - 9 pm</p>
+      <p>Sunday - Monday: 8 am - 8 pm</p>
+      <p>Tuesday - Saturday: 8 am - 9 pm</p>
     </div>
 
     <div class="col s12 m6 l6">
       <img class="responsive-img" src="../img/sb5.jpeg">
     </div>
+
+    <!-- NOTE Turn this into a directive, and hide the api key before pushing again -->
+
+    <div class="col s12 m12 l12">
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    <script>
+    function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850),
+        zoom:5,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 
   </div>
 
@@ -37,8 +56,26 @@
       <p>925.310.4773</p>
       <p>info@itsonthesideboard.com</p>
       <p>Hours: </p>
-      <p>Sunday - Monday 8 am - 8 pm</p>
-      <p>Tuesday - Saturday 8 am - 9 pm</p>
+      <p>Sunday - Monday: 8 am - 8 pm</p>
+      <p>Tuesday - Saturday: 8 am - 9 pm</p>
+    </div>
+
+    <!-- NOTE Turn this into a directive, and hide the api key before pushing again -->
+
+    <div class="col s12 m12 l12">
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    <script>
+    function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850),
+        zoom:5,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
     </div>
 
   </div>
