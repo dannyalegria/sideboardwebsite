@@ -14,7 +14,7 @@ module.exports = {
     CRUD Functions:
   ##############################*/
 
-  //NOTE Adapt these functions for the menu when the admin page is created. NOTE
+  //NOTE Adapt these commented out functions for the menu when the admin page is created. NOTE
 
   // //CREATE
   // createOneProduct: function(req, res){
@@ -44,6 +44,66 @@ module.exports = {
       }
     })
   },
+  getBeverageMenu: function(req, res){
+    db.menu.read_beverage_menu(["beverage"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  },
+  getWeekdayMorningMenu: function(req, res){
+    db.menu.read_weekdaymorning_menu(["weekdaymorning"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  },
+  getFridayMorningMenu: function(req, res){
+    db.menu.read_fridaymorning_menu(["fridaymorning"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  },
+  getWeekendMorningMenu: function(req, res){
+    db.menu.read_weekendmorning_menu(["weekendmorning"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  },
+  getLunchMenu: function(req, res){
+    db.menu.read_lunch_menu(["lunch"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  },
+  getDinnerMenu: function(req, res){
+    db.menu.read_dinner_menu(["dinner"], function(err, results){
+      if (err){
+        console.error(err);
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  }
 
   // getOneProduct: function(req, res){
   //   db.shop.read_product([req.params.id],

@@ -4,32 +4,393 @@
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="beverage">- Beverage Menu -</h3>
-      <p>{{menuItems}}</p>
+
+      <!-- Handcrafted Adult Beverages -->
+      <h4>Handcrafted Adult Beverages</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="adultBeverage in adultBeverages">
+            <td><h5>{{adultBeverage.name}}</h5></td>
+            <td>{{adultBeverage.description}}</td>
+            <td>{{adultBeverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Coffee -->
+      <h4>Coffee</h4>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Origin</th>
+            <th>Roast</th>
+            <th>Brewery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="coffee in coffeeBeverages">
+            <td><h5>{{coffee.name}}</h5></td>
+            <td>{{coffee.description}}</td>
+            <td>{{coffee.descriptiontwo}}</td>
+            <td>{{coffee.descriptionthree}}</td>
+            <td>{{coffee.descriptionfour}}</td>
+            <td>{{coffee.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Espresso Drinks -->
+      <h4>Espresso Drinks</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="espressoBeverage in espressoBeverages">
+            <td><h5>{{espressoBeverage.name}}</h5></td>
+            <td>{{espressoBeverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Iced Coffee -->
+      <h4>Iced Coffee</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="icedCoffeeBeverage in icedCofeeBeverages">
+            <td><h5>{{icedCoffeeBeverage.name}}</h5></td>
+            <td>{{icedCoffeeBeverage.description}}</td>
+            <td>{{icedCoffeeBeverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Hot Chocolate -->
+      <h4>Hot Chocolate</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="hotChocolateBeverage in hotChocolateBeverages">
+            <td><h5>{{hotChocolateBeverage.name}}</h5></td>
+            <td>{{hotChocolateBeverage.description}}</td>
+            <td>{{hotChocolateBeverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Tea Service -->
+      <h4>Tea Service</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="teaServiceBeverage in teaServiceBeverages">
+            <td><h5>{{teaServiceBeverage.name}}</h5></td>
+            <td>{{teaServiceBeverage.description}}</td>
+            <td>{{teaServiceBeverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Wines On Tap -->
+      <h4>Wines On Tap</h4>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Region</th>
+            <th>Cup</th>
+            <th>Bottle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="wine in winesOnTap">
+            <td><h5>{{wine.name}}</h5></td>
+            <td>{{wine.description}}</td>
+            <td>{{wine.descriptiontwo}}</td>
+            <td>{{wine.price | currency}}</td>
+            <td>{{wine.pricetwo | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bottled Wines -->
+      <h4>Bottled Wines</h4>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Region</th>
+            <th>Cup</th>
+            <th>Bottle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="wine in wines">
+            <td><h5>{{wine.name}}</h5></td>
+            <td>{{wine.description}}</td>
+            <td>{{wine.descriptiontwo}}</td>
+            <td>{{wine.price | currency}}</td>
+            <td>{{wine.pricetwo | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Draft Beer -->
+      <h4>Draft Beer</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="beer in draftBeers">
+            <td><h5>{{beer.name}}</h5></td>
+            <td>{{beer.description}}</td>
+            <td>{{beer.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bottled Beer -->
+      <h4>Bottled Beer</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="beer in bottledBeers">
+            <td><h5>{{beer.name}}</h5></td>
+            <td>{{beer.description}}</td>
+            <td>{{beer.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Refreshers and Sodas -->
+      <h4>Refreshers and Sodas</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="drink in refreshersAndSodas">
+            <td><h5>{{drink.name}}</h5></td>
+            <td>{{drink.description}}</td>
+            <td>{{drink.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
     </div>
   </div>
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="weekdayMorning">- Weekday Morning -</h3>
+
+      <!-- Weekday Morning -->
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="item in weekdayMorningMenu">
+            <td><h5>{{item.name}}</h5></td>
+            <td>{{item.description}}</td>
+            <td>{{item.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="fridayMorning">- Friday Morning -</h3>
+
+      <!-- Friday Morning -->
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="item in fridayMorningMenu">
+            <td><h5>{{item.name}}</h5></td>
+            <td>{{item.description}}</td>
+            <td>{{item.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
+
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="weekendMorning">- Weekend Morning -</h3>
+
+      <!-- Weekend Morning Beverages -->
+      <h4>Weekend Morning Beverages</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="beverage in weekendMorningBeverages">
+            <td><h5>{{beverage.name}}</h5></td>
+            <td>{{beverage.description}}</td>
+            <td>{{beverage.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Weekend Breakfast -->
+      <h4>Weekend Breakfast</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="item in weekendBreakfast">
+            <td><h5>{{item.name}}</h5></td>
+            <td>{{item.description}}</td>
+            <td>{{item.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="lunch">- Lunch -</h3>
+
+      <!-- Sides -->
+      <h4>Sides</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="side in sides">
+            <td><h5>{{side.name}}</h5></td>
+            <td>{{side.description}}</td>
+            <td>{{side.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- House Made Dips -->
+      <h4>House Made Dips</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="dip in houseMadeDips">
+            <td><h5>{{dip.name}}</h5></td>
+            <td>{{dip.description}}</td>
+            <td>{{dip.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Soup -->
+      <h4>Soup</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="soup in soups">
+            <td><h5>{{soup.name}}</h5></td>
+            <td>{{soup.description}}</td>
+            <td>{{soup.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Salads -->
+      <h4>Salads</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="salad in salads">
+            <td><h5>{{salad.name}}</h5></td>
+            <td>{{salad.description}}</td>
+            <td>{{salad.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Sandwhiches -->
+      <h4>Sandwhiches</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="sandwhich in sandwhiches">
+            <td><h5>{{sandwhich.name}}</h5></td>
+            <td>{{sandwhich.description}}</td>
+            <td>{{sandwhich.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pasta -->
+      <h4>Pasta</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="pasta in pastas">
+            <td><h5>{{pasta.name}}</h5></td>
+            <td>{{pasta.description}}</td>
+            <td>{{pasta.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
   <div class="row">
     <div class="col s12 center-align">
       <h3 id="dinner">- Dinner -</h3>
+      
+      <!-- Sides -->
+      <h4>Sides</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="side in sides">
+            <td><h5>{{side.name}}</h5></td>
+            <td>{{side.description}}</td>
+            <td>{{side.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- House Made Dips -->
+      <h4>House Made Dips</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="dip in houseMadeDips">
+            <td><h5>{{dip.name}}</h5></td>
+            <td>{{dip.description}}</td>
+            <td>{{dip.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Soup -->
+      <h4>Soup</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="soup in soups">
+            <td><h5>{{soup.name}}</h5></td>
+            <td>{{soup.description}}</td>
+            <td>{{soup.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Salads -->
+      <h4>Salads</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="salad in salads">
+            <td><h5>{{salad.name}}</h5></td>
+            <td>{{salad.description}}</td>
+            <td>{{salad.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Sandwhiches -->
+      <h4>Sandwhiches</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="sandwhich in sandwhiches">
+            <td><h5>{{sandwhich.name}}</h5></td>
+            <td>{{sandwhich.description}}</td>
+            <td>{{sandwhich.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pasta -->
+      <h4>Pasta</h4>
+      <table class="bordered">
+        <tbody>
+          <tr ng-repeat="pasta in pastas">
+            <td><h5>{{pasta.name}}</h5></td>
+            <td>{{pasta.description}}</td>
+            <td>{{pasta.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 

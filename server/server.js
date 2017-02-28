@@ -107,7 +107,20 @@ app.get('/api/me', userController.me);
 app.get('/api/order', orderController.read);
 
 // Menu:
+
 app.get('/api/menu', menuController.getMenuItems);
+// beverage
+app.get('/api/beveragemenu', menuController.getBeverageMenu);
+//weekdaymorning
+app.get('/api/weekdaymorning', menuController.getWeekdayMorningMenu);
+//fridaymorning
+app.get('/api/fridaymorning', menuController.getFridayMorningMenu);
+//weekendmorning
+app.get('/api/weekendmorning', menuController.getWeekendMorningMenu);
+//lunch
+app.get('/api/lunch', menuController.getLunchMenu);
+//dinner
+app.get('/api/dinner', menuController.getDinnerMenu);
 
 /*##############################
   Writeable:
