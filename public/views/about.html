@@ -1,7 +1,17 @@
+
+<div class="parallax-container">
+  <div class="parallax"><img src="./img/sb14.jpg"></div>
+  <script>
+  $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
+</div>
+
 <div class="container">
 
   <!-- About Section -->
-  <div class="container">
+
     <div class="row">
       <div class="col s12">
         <h4>Sideboard is a casual and cozy meeting place where people come to share our passion for quality handcrafted comfort food and beverage.</h4>
@@ -10,37 +20,54 @@
           <p>Sideboard is a Green Certified restaurant.</p>
       </div>
     </div>
-  </div>
 
     <!-- Instagram Feed -->
-    <div class="col s12">
-      <h4>Placeholder for instagram feed</h4>
-        <p>sdfgdfgsdf</p>
-      <h4>sdfsdf</h4>
-        <p>sdfgdfgsdf</p>
-      <h4>sdfsdf</h4>
-        <p>sdfgdfgsdf</p>
-    </div>
+    <section class="instafeed col s12" ng-controller="ShowImages as images">
+      <div class="bar">
+                <!-- These two buttons switch the layout variable,
+                     which causes the correct UL to be shown. -->
+                <a class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+                <a class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+            </div>
+
+            <ul ng-show="layout == 'grid'" class="grid">
+                <!-- A view with big photos and no text -->
+                <li ng-repeat="p in pics">
+                    <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" /></a>
+                </li>
+            </ul>
+            <ul ng-show="layout == 'list'" class="list">
+                <!-- A compact view smaller photos and titles -->
+                <li ng-repeat="p in pics">
+                    <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.thumbnail.url}}" /></a>
+                    <p>{{p.caption.text}}</p>
+                </li>
+            </ul>
+    </section>
 
   </div>
 
   <!-- Staff Bios -->
 
-  <br>
+  <!-- <br>
   <div class="divider"></div>
   <br>
+
+  <div class="container">
 
   <div class="card-panel grey lighten-5 z-depth-1">
     <div class="row valign-wrapper">
       <div class="col s2">
-        <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-      </div>
+        <img src="images/yuna.jpg" alt="" class="circle responsive-img">--> <!-- notice the "circle" class -->
+      <!-- </div>
       <div class="col s10">
         <span class="black-text">
           This is a square image. Add the "circle" class to it to make it appear circular.
         </span>
       </div>
     </div>
-  </div>
+  </div> -->
+
+</div>
 
 </div>
