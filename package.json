@@ -27,6 +27,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-cachebust": "0.0.6",
     "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-print": "^2.0.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",

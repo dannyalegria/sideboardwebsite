@@ -1,4 +1,4 @@
-angular.module("app", ["ui.router", "ngMap"])
+angular.module("app", ["ui.router", "ngMap", "ui.materialize"])
 .config(function($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise('/');
@@ -25,6 +25,11 @@ angular.module("app", ["ui.router", "ngMap"])
   url: '/shop',
   templateUrl: './views/shop.html'
   })
+  .state('cart', {
+  url: '/cart',
+  templateUrl: './views/cart.html',
+  controller: 'cartController'
+  })
   .state('product', {
   url: '/shop/:id',
   templateUrl: '../views/product.html',
@@ -32,7 +37,8 @@ angular.module("app", ["ui.router", "ngMap"])
   })
   .state('admin', {
   url: '/admin',
-  templateUrl: './views/admin.html'
+  templateUrl: './views/admin.html',
+  controller: 'adminController'
   });
 
 });

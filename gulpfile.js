@@ -1,51 +1,47 @@
-//Instructions:
-// 1. `npm init` in no-server project
-// 1b. Copy dependecies from package.json into no-server package.json
-// 1c. run `npm install` on command line
-// 2. copy gulpfile.js into project
-// 3. Update any folder paths in gulpfile.js to match your structure
+var gulp = require('gulp');
+var concat = require("gulp-concat");
+var annotate = require("gulp-ng-annotate");
+var sass = require("gulp-sass");
+var nodemon = require('gulp-nodemon');
 
-var gulp = require('gulp')
-, sourcemaps = require('gulp-sourcemaps')
-, sass = require('gulp-sass')
-, concat = require('gulp-concat')
-, CacheBuster = require('gulp-cachebust')
-, print =require('gulp-print')
-, babel =require('gulp-babel')
-, uglify =require('gulp-uglify');
+var paths = {
+	jsSource: ['public/js/**/*.js'],
+	sassSource: ['public/**/*.sass'], // Change sass to scss if you want to work with it instead.
+	indexSource: ['public/**/*.html', 'public/**/*.css'],
+	server: ['server/server.js']
+};
 
-var cachebust = new CacheBuster();
-
-gulp.task('build-css', function(){
-  return gulp.src('./public/styles/*')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(cachebust.resources())
-    .pipe(concat('main.css'))
-    //.pipe(uglify())
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./dist'));
+gulp.task('serve', function() {
+	nodemon({
+		'script': paths.server
+	});
 });
 
-gulp.task('build-js', function() {
-   return gulp.src('.public/js/**/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(print())
-      .pipe(babel({ presets: ['es2015'] }))
-      .pipe(concat('bundle.js'))
-      //.pipe(uglify())
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./dist/js'));
+gulp.task('sass', function() {
+	gulp.src(paths.sassSource)
+		.pipe(sass())
+		.pipe(concat('bundle.css'))
+		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('build', ['build-css', 'build-js'], function() {
-    return gulp.src('index.html')
-        .pipe(cachebust.references())
-        .pipe(gulp.dest('./dist'));
+gulp.task('js', function() {
+	gulp.src(paths.jsSource)
+		.pipe(annotate())
+		.pipe(concat('bundle.js'))
+		.pipe(gulp.dest('./dist'));
 });
+
+gulp.task('index', function() {
+	gulp.src(paths.indexSource)
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('build', ['js', 'sass', 'index']);
 
 gulp.task('watch', function() {
-    return gulp.watch(['./public/index.html','./partials/*.html', './public/styles/*.*css', './public/js/**/*.js'], ['build']);
+	gulp.watch(paths.jsSource, ['js']);
+	gulp.watch(paths.sassSource, ['sass']);
+	gulp.watch(paths.indexSource, ['index']);
 });
 
-gulp.task('default', ['watch', 'build']);
+gulp.task('default', ['build', 'watch']); // add 'serve' to the array if you want gulp to run nodemon as well.

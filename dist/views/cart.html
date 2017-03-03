@@ -1,0 +1,42 @@
+<!-- <div class="container">
+  <h1>Cart</h1>
+  <h3>Items in cart:</h3>
+  <ul ng-repeat="product in orderData.products">
+    <li>{{product.name}}</li>
+    <p>Quantity: {{product.qty}}</p><input type="number" min="1">
+    <a style="color: white !important;" class="waves-effect waves-light btn" href="#">Update</a>
+  </ul>
+  <a style="color: white !important;" class="waves-effect waves-light btn" href="#">Checkout</a>
+  <a
+    style="color: white !important;"
+    class="waves-effect waves-light btn"
+    ng-click="addToCart(product.id)">
+    Add
+    <i style="color: white !important;" class="fa fa-cart-plus" aria-hidden="true"></i>
+  </a>
+</div>
+
+<button type="button" name="button" ng-click="submit()">Submit Order</button>
+<br>
+Total: {{total | currency}}
+<hr> -->
+
+ORDERS
+
+<button type="button" name="button" ng-click="submit()">Submit Order</button>
+<br>
+Total: {{total | currency}}
+<hr>
+{{orderData}}
+<div class="" ng-repeat="product in orderData.products">
+  {{product}}
+  Name: {{product.name}}<br>
+  Desc: {{product.description}}<br>
+  Price: {{product.price | currency}}<br>
+  QTY: {{product.qty}}<br>
+  Total: {{product.price * product.qty | currency}}
+  <br>
+  <input type="number" name="" value="" min="0" ng-model="product.qty"  ng-change="updateItem(product.id, product.qty)"><br>
+  <button type="button" name="button" ng-click="deleteItem(product.id)">Delete</button>
+  <hr>
+</div>

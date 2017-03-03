@@ -4,7 +4,7 @@ var db = require('../massive');
 
 module.exports = {
   complete: function (req, res, next) {
-    console.log("Completing oder");
+    console.log("Completing order");
     db.order.update([req.user.order_id, new Date(), undefined], function(err, order) {
       if (err) {
         console.log('complete order err: ', err);
@@ -50,9 +50,10 @@ module.exports = {
       if (err) {
         console.log('Add to Order err: ', err);
         return res.status(500).send(err);
-      }
 
-      return res.status(200).send('Product added to cart');
+      }
+      console.log("success");
+      return res.status(200).send('Product added to cart');      
     });
   },
   updateItemInCart: function(req, res, next) {
