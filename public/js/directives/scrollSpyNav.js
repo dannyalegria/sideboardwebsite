@@ -4,17 +4,14 @@ angular.module("app").directive('scrollSpyNav', function() {
     templateUrl: './js/directives/scrollSpyNavTempl.html',
     link: function(scope, element, att) {
       $('.scrollspy').scrollSpy();
-      var distance = $(".floaty-nav").offset().top;
-      console.log(distance);
-        $(window).scroll(function(){
-          var scrollPosition = $(this).scrollTop();
-          console.log(scrollPosition)
-          if(scrollPosition > distance){
-            $(".floaty-nav").addClass('fix');
-          } else {
-            $(".floaty-nav").removeClass('fix');
-          }
-        })
+      $(window).scroll(function(){
+        var scrollPosition = $(this).scrollTop();
+        if(scrollPosition > 300){
+          $(".scroll-spy-nav").addClass('pinned');
+        } else {
+          $(".scroll-spy-nav").removeClass('pinned');
+        }
+      })
    }
   };
 });

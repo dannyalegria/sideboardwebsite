@@ -446,14 +446,20 @@ angular.module("app").directive('floatyNav', function() {
     },
     link: function(scope, element, att) {
       $('.scrollspy').scrollSpy();
-      $(window).scroll(function(){
-        var scrollPosition = $(this).scrollTop();
-        if(scrollPosition > 300){
-          $(".scroll-spy-nav").addClass('pinned');
-        } else {
-          $(".scroll-spy-nav").removeClass('pinned');
-        }
-      })
+      $(".button-collapse").sideNav();
+      var distance = $(".floaty-nav").offset().top;
+      console.log(distance);
+        $(window).scroll(function(){
+          var scrollPosition = $(this).scrollTop();
+          console.log(scrollPosition)
+          if(scrollPosition > distance){
+            $(".floaty-nav").addClass('fix');
+            $(".nav-text").addClass('fix-text');
+          } else {
+            $(".floaty-nav").removeClass('fix');
+            $(".nav-text").removeClass('fix-text');
+          }
+        })
    }
   };
 });
@@ -477,17 +483,14 @@ angular.module("app").directive('scrollSpyNav', function() {
     templateUrl: './js/directives/scrollSpyNavTempl.html',
     link: function(scope, element, att) {
       $('.scrollspy').scrollSpy();
-      var distance = $(".floaty-nav").offset().top;
-      console.log(distance);
-        $(window).scroll(function(){
-          var scrollPosition = $(this).scrollTop();
-          console.log(scrollPosition)
-          if(scrollPosition > distance){
-            $(".floaty-nav").addClass('fix');
-          } else {
-            $(".floaty-nav").removeClass('fix');
-          }
-        })
+      $(window).scroll(function(){
+        var scrollPosition = $(this).scrollTop();
+        if(scrollPosition > 300){
+          $(".scroll-spy-nav").addClass('pinned');
+        } else {
+          $(".scroll-spy-nav").removeClass('pinned');
+        }
+      })
    }
   };
 });

@@ -141,11 +141,11 @@ img {
 }
 
 .page-footer {
-  background-color: #696969 !important;
+  background-color: #26A69A !important;
 }
 
-.footer-copywrite{
-  background-color: #1F1F1F !important;
+.footer-copyright{
+  background-color: ##2672a6 !important;
 }
 
 /* Google Map */
@@ -153,6 +153,15 @@ img {
 .gmap {
   position: relative !important;
   display: block;
+}
+
+.social-media-section h4{
+  text-align: center;
+}
+
+.social-media-buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .instafeed {
@@ -197,6 +206,8 @@ img {
 	position:relative;
 	text-align:right;
 	line-height: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .instafeed .bar a{
@@ -208,6 +219,11 @@ img {
 	margin-right:5px;
 	border-radius:2px;
 	cursor:pointer;
+}
+
+.instafeed .bar i {
+  color: white !important;
+  font-size: 2em;
 }
 
 .instafeed .bar a.active{
@@ -297,10 +313,12 @@ img {
 .fix {
   top: 0px;
   position: fixed;
-  transition: background-color 0.75s ease;
-  background-color: #696969 !important;
-  transition: color 0.5s ease;
-  color: #000 !important;
+  transition: 1s ease;
+  background-color: #2672a6 !important;
+}
+
+.fix-text {
+  color: white !important;
 }
 
 .jump-fix {
